@@ -22,7 +22,7 @@ def _parse_timestamp(value):
 def _read_internal_actors(path):
     if path is None:
         return set()
-    return {line for line in path.read_text(encoding="utf-8").splitlines() if line}
+    return {line for line in path.read_text(encoding="utf-8").split("\n") if line}
 
 
 def _build_report(events, internal_actors):
